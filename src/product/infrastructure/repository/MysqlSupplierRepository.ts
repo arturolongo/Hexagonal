@@ -22,11 +22,15 @@ async createSupplier(
     name :string
     
 ):Promise<Supplier | null>{
-        const sql = "INSERT INTO suppliers (idSupplier,name) VALUES (12,SAD)";
-        const params : any[] = [idSupplier,name];
+    const sql = "INSERT INTO suppliers (idSupplier, name) VALUES (?, ?)";
+    const params: any[] = [idSupplier, name];
+
+
         try {
-            const [result]: any = await query(sql,params);
-            return new Supplier (result.insert)
+            const [result]: any = await query(sql, params);
+
+            return new Supplier(result.insertId, name);
+
         } catch (error) {
             return null;
         }
