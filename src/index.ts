@@ -3,7 +3,7 @@ import morgan from "morgan";
 import { Signale } from "signale";
 import * as dotenv from "dotenv";
 
-import { supplierRouter } from "./product/infrastructure/routes/SupplierRouter";
+import { supplierRouter } from "./supliers/infrastructure/routes/SupplierRouter";
 import { booksRouter } from "./product/infrastructure/routes/BooksRouter";
 const app = express();
 dotenv.config();
@@ -17,5 +17,5 @@ const port: string | undefined = process.env.PORT || "3000";
 const signale = new Signale();
 
 app.listen(3000, () => {
-  signale.success("server listening on port:", port);
+  signale.success("Servidor escuchando en el puerto:", port);
 });
