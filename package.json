@@ -11,6 +11,7 @@
   "author": "@Eliseo10208",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/dotenv": "^8.2.0",
     "@types/express": "4.17.21",
     "@types/morgan": "^1.9.9",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "@types/signale": "^1.4.4",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "morgan": "^1.10.0",

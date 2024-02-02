@@ -35,4 +35,17 @@ async createSupplier(
             return null;
         }
 }
+  async  deleteSupplier(idSupplier: number): Promise<Supplier | null> {
+         const sql = 'DELETE FROM suppliers WHERE idSupplier = ?';
+        const params : any[] = [idSupplier];
+        try {
+            const [result] :any = await query(sql, params);
+            
+            return result;
+        } catch (error) {
+
+            return null;
+           
+        }
+  }
 }

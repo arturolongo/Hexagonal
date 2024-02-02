@@ -1,4 +1,4 @@
-import express from "express";
+import express from 'express'
 import morgan from "morgan";
 import { Signale } from "signale";
 import * as dotenv from "dotenv";
@@ -10,9 +10,10 @@ dotenv.config();
 app.use(morgan("dev"));
 app.use(express.json());
 app.use("/books",booksRouter)
-app.use("/supliers", supplierRouter)
+app.use("/suppliers", supplierRouter)
 
-const port: string | undefined = process.env.PORT || "3000";
+
+const port: string | undefined = process.env.PORT ?? "3000";
 
 const signale = new Signale();
 

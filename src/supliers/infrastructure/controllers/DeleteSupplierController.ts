@@ -1,23 +1,21 @@
 import { Request, Response } from "express";
 
-import { GetAllSupplierUseCase } from "../../application/MethodsSupplier/GetAllSupplierUseCase";
+import { DeleteSupplierUseCase } from "../../application/MethodsSupplier/DeleteSuppliersUseCase";
 
-export class GetAllSupplierController {
-  constructor(readonly getAllSupplierUseCase: GetAllSupplierUseCase) {}
+export class DeleteSuppliersController {
+  constructor(readonly DeleteSupplierUseCase: DeleteSupplierUseCase) {}
 
   async run(req: Request, res: Response):Promise<void> {
+
+
+    const id : number =parseInt(req.params. idSupplier)
     try {
-      const supplier = await this.getAllSupplierUseCase.run();
+      const supplier = await this.DeleteSupplierUseCase.run(id);
       console.log(supplier);
       if (supplier)
         res.status(200).send({
           status: "success",
-          data: supplier.map((supplier: any) => {
-            return {
-              idSuppliers : supplier.idSupplier,
-              name: supplier.name
-            };
-          }),
+
         });
       else
         res.status(400).send({

@@ -3,7 +3,7 @@ import { CreateBooksUseCase } from "../../application/MethodsBooks/CreateBooksUs
 
 export class CreateBooksController{
     constructor(readonly createBooksUseCase:CreateBooksUseCase){}
-    async run (req: Request, res: Response){
+    async run (req: Request, res: Response):Promise<void> {
         const data = req.body;
         try {
             const book = await this.createBooksUseCase.run(

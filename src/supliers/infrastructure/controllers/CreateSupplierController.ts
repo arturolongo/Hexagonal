@@ -4,7 +4,7 @@ import { CreateSupplierUseCase } from "../../application/MethodsSupplier/CreateS
 export class CreateSupplierController {
   constructor(readonly createSupplierUseCase: CreateSupplierUseCase) {}
 
-  async run(req: Request, res: Response) {
+  async run(req: Request, res: Response):Promise<void> {
     const data = req.body;
     try {
       const supplier = await this.createSupplierUseCase.run(

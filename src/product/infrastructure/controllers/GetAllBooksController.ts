@@ -4,7 +4,7 @@ import { GetAllBooksUseCase } from "../../application/MethodsBooks/GetAllBooksUs
 export class GetAllBooksController {
   constructor(readonly getAllBooksUseCase: GetAllBooksUseCase) {}
 
-  async run(req: Request, res: Response) {
+  async run(req: Request, res: Response):Promise<void> {
     try {
       const books = await this.getAllBooksUseCase.run();
       console.log(books);

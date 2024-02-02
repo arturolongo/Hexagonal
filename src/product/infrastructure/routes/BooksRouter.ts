@@ -1,6 +1,5 @@
 import express from "express";
-import { CreateBooksController } from "../controllers/CreateBooksController";
-import { GetAllBooksController } from "../controllers/GetAllBooksController";
+
 import { createBooksController, getAllBooksController } from "../DependenciesBooks";
 export const  booksRouter = express.Router();
 
@@ -10,6 +9,6 @@ booksRouter.get(
 );
 
 booksRouter.post(
-    "/",
+    "/agregar",
     createBooksController.run.bind(createBooksController)
 );

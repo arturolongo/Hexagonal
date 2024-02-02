@@ -6,4 +6,8 @@ export interface SupplierRepository{
         idSupplier : number,
         name : string
     ): Promise<Supplier | null>
+    
+    deleteSupplier(
+        idSupplier : number
+    ):Promise<Supplier | null>
 }
