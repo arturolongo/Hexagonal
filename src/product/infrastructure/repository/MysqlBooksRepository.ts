@@ -25,7 +25,7 @@ idBooks: number,
 name: string,
 description: string): Promise<Books | null> 
     {
-        const sql = "INSERT INTO books (idBooks,name,description) VALUES (11,?,?)";
+        const sql = "INSERT INTO books (idBooks,name,description) VALUES (?,?,?)";
         const params : any[] = [idBooks,name,description];
         try {
             const [result]: any = await query(sql , params);

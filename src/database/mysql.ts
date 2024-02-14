@@ -27,6 +27,7 @@ export async function query(sql: string, params: any[]){
         return result;
     } catch(error){
         signale.error(error);
+        console.log('Se ha producdio un error')
         return null;
     }
 }

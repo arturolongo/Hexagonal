@@ -12,7 +12,7 @@ export class CreateBooksUseCase {
         description: string
     ): Promise<Books | null>{
     
-    let pass = this.encryptPassword.encodePassword(name)
+    let pass = this.encryptPassword.encodePassword(name);
        
         try {
             const book = await this.bookRepository.createBook(

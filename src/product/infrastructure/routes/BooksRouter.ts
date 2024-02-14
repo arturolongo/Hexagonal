@@ -9,6 +9,6 @@ booksRouter.get(
 );
 
 booksRouter.post(
-    "/agregar",
+    "/",
     createBooksController.run.bind(createBooksController)
 );

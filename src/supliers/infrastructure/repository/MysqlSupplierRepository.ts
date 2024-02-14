@@ -24,8 +24,6 @@ async createSupplier(
 ):Promise<Supplier | null>{
     const sql = "INSERT INTO suppliers (idSupplier, name) VALUES (?, ?)";
     const params: any[] = [idSupplier, name];
-
-
         try {
             const [result]: any = await query(sql, params);
 

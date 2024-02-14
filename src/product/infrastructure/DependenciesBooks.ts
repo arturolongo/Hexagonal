@@ -2,12 +2,13 @@ import { CreateBooksUseCase } from "../application/MethodsBooks/CreateBooksUseCa
 import { GetAllBooksUseCase } from "../application/MethodsBooks/GetAllBooksUseCase";
 import { CreateBooksController } from "./controllers/CreateBooksController";
 import { GetAllBooksController } from "./controllers/GetAllBooksController";
+import { EncryptService } from "./helpers/EncryptService";
 import { MysqlBooksRepository } from "./repository/MysqlBooksRepository";
 
 export const mysqlBooksRepository = new MysqlBooksRepository();
-
+const encryptService =  new EncryptService();
 export const createBooksUseCase = new CreateBooksUseCase(
-  mysqlBooksRepository
+  mysqlBooksRepository,encryptService
 );
 
 export const getAllUseCase = new GetAllBooksUseCase(mysqlBooksRepository);

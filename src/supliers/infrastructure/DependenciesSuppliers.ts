@@ -7,11 +7,12 @@ import {GetAllSupplierController} from "./controllers/GetAllSuppliersController"
 import { DeleteSupplierUseCase } from '../application/MethodsSupplier/DeleteSuppliersUseCase';
 import { DeleteSuppliersController } from "./controllers/DeleteSupplierController";
 import { MysqlSupplierRepository } from "./repository/MysqlSupplierRepository";
+import { Broker } from './helpers/rabbitqm';
 
 export const mysqlSupplierRepository = new MysqlSupplierRepository();
-
+const broker = new Broker();
 export const createSupplierUseCase = new CreateSupplierUseCase(
-  mysqlSupplierRepository
+  mysqlSupplierRepository,broker
 );
 
 export const getAllUseCase = new GetAllSupplierUseCase(mysqlSupplierRepository);
